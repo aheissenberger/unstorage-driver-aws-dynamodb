@@ -1,6 +1,6 @@
 {
   "name": "unstorage-driver-aws-dynamodb",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "AWS DynamoDB driver for unstorage",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -9,7 +9,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "tsup-node",
+    "prepublishOnly": "tsc && npm run build",
     "test": "jest"
   },
   "keywords": [
@@ -40,5 +41,8 @@
   "optionalDependencies": {
     "@aws-sdk/client-dynamodb": "^3.506.0",
     "@aws-sdk/lib-dynamodb": "^3.506.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
